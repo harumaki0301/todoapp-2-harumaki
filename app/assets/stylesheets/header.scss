@@ -1,0 +1,33 @@
+.header-logo {
+  position: absolute;
+  width: 56px;
+  height: 25px;
+  left: 30px;
+  top: 17px;
+  right: 328px;
+
+  font-family: Avnir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+
+  color: #000000;
+
+}
+
+.header-line {
+  position: absolute;
+  width: 1920px;
+  height: 1px;
+  left: 0px;
+  top: 58px;
+
+  background: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.1;
+
+  
+}
+
