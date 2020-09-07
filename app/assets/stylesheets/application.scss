@@ -17,3 +17,27 @@
  @import 'header';
  @import 'homepage';
  @import 'variables';
+ @import 'card';
+
+ .title {
+  position: absolute;
+  height: 36px;
+  left: 30px;
+  
+  
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+  /* identical to box height */
+  
+  
+  color: #000000;
+ }
+
+ .container {
+  padding-top: 160px;
+  width: 100%;
+}
+
