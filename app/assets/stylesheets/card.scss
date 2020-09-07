@@ -1,21 +1,15 @@
 .card {
-  position: absolute;
-  width: 80%;
+  padding: 17px 30px;
   height: 161px;
-  left: 30px;
-  top: 161px;
-
   background: #F4F4F4;
   border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .card-title {
-  position: absolute;
   height: 25px;
-  left: 0%;
-  right: 76.79%;
   top: calc(50% - 25px/2 - 12.5px);
-
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
@@ -29,10 +23,7 @@
 }
 
 .card-content {
-  position: absolute;
   height: 19px;
-  left: 0%;
-  right: 0%;
   top: calc(50% - 19px/2 + 15.5px);
 
   font-family: Avenir;
@@ -50,22 +41,15 @@
 }
 
 .add-board-card {
-  position: absolute;
-width: 80%;
 height: 160px;
-left: 30px;
-top: 348px;
-
 background: #FFFFFF;
 border: 1px dashed rgba(0, 0, 0, 0.2);
 border-radius: 10px;
+margin-left: 20px;
 }
 
-.add-board {
-  position: absolute;
+.add-board-text {
   height: 25px;
-  left: 0.35%;
-  right: 0.35%;
   top: calc(50% - 25px/2);
 
   font-family: Avenir;
