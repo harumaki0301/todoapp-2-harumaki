@@ -1,0 +1,81 @@
+.card {
+  position: absolute;
+  width: 80%;
+  height: 161px;
+  left: 30px;
+  top: 161px;
+
+  background: #F4F4F4;
+  border-radius: 10px;
+}
+
+.card-title {
+  position: absolute;
+  height: 25px;
+  left: 0%;
+  right: 76.79%;
+  top: calc(50% - 25px/2 - 12.5px);
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+
+
+  color: #000000;
+  padding-left: 20px;
+}
+
+.card-content {
+  position: absolute;
+  height: 19px;
+  left: 0%;
+  right: 0%;
+  top: calc(50% - 19px/2 + 15.5px);
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #000000;
+
+  mix-blend-mode: normal;
+  opacity: 0.4;
+
+  padding-left: 20px;
+}
+
+.add-board-card {
+  position: absolute;
+width: 80%;
+height: 160px;
+left: 30px;
+top: 348px;
+
+background: #FFFFFF;
+border: 1px dashed rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+}
+
+.add-board {
+  position: absolute;
+  height: 25px;
+  left: 0.35%;
+  right: 0.35%;
+  top: calc(50% - 25px/2);
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
