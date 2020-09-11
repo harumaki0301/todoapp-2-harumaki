@@ -10,9 +10,11 @@
       <% end %>
   <% end %>
 
-  <div class="add-board-card">
-    <h2 class="add-board-text">+ Add new board</h2>
-  </div>
+  <%= link_to new_board_path do %>
+    <div class="add-board-card">
+      <h2 class="add-board-text">+ Add new board</h2>
+    </div>
+  <% end %>
 
 </div>
 
