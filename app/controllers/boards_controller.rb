@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.all
   end
-  
+
   def show
     @board = Board.find(params[:id])
   end
@@ -20,7 +20,7 @@ class BoardsController < ApplicationController
     end
   end
 
-  private 
+  private
   def board_params
     params.require(:board).permit(:name, :description)
   end

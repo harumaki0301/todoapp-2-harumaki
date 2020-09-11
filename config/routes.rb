@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get '/boards', to: 'boards#index'
 
-  resources :boards 
-  
+  resources :boards
+
 end

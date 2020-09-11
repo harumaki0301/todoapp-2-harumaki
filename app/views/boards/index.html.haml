@@ -1,0 +1,10 @@
+.title All Boards
+.container
+  - @boards.each do |board|
+    = link_to board_path(id: board.id) do
+      .card
+        %h2.card-title= board.name
+        %p.card-content= board.description
+  = link_to new_board_path do
+    .add-board-card
+      %h2.add-board-text + Add new board

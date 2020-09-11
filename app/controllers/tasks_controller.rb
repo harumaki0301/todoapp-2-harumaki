@@ -8,5 +8,5 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @tasks = Task.all
   end
-  
+
 end
