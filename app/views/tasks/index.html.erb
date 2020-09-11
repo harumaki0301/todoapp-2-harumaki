@@ -1,0 +1,14 @@
+<div class="title">All Tasks</div>
+<div class="container">
+
+<% @tasks.each do |task| %>
+  <div class="card">
+    <h2 class="card-title"><%= task.title %></h2>
+    <p class="card-content"><%= task.content %></p>
+  </div>
+<% end %>
+
+  <div class="add-board-card">
+    <h2 class="add-board-text">+ Add new task</h2>
+
+</div>
