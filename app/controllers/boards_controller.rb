@@ -1,5 +1,9 @@
 class BoardsController < ApplicationController
   def index
-    @board = Board.first
+    @boards = Board.all
+  end
+
+  def show
+    
   end
 end
