@@ -19,6 +19,10 @@
  @import 'variables';
  @import 'card';
 
+ a {
+   text-decoration: none;
+ }
+
  .title {
   position: absolute;
   height: 36px;
