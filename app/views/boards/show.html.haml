@@ -1,7 +1,15 @@
 .title All Tasks
 .container
   .card
+    
     %h2.card-title= @board.name
     %p.card-content task content
+    .board_detail_actions
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          %a{:href => "#"} 編集する
+    
+           
   .add-board-card
     %h2.add-board-text + Add new task
