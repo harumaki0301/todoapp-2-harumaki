@@ -1,1 +1,15 @@
-%h1 edit
+.title Edit Board
+.container
+  %ul
+    - @board.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @board, url: board_path(@board), method: 'put', local: true) do |f|
+    %div
+      = f.label :name, 'ボードの名前'
+    %div
+      = f.text_field :name, class: 'text'
+    %div
+      = f.label :description, '説明'
+    %div
+      = f.text_area :description
+    = f.submit '更新', class: 'btn-primary'
