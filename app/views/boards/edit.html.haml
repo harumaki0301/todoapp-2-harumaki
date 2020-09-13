@@ -1,9 +1,9 @@
-.title New Board
+.title Edit Board
 .container
   %ul
     - @board.errors.full_messages.each do |message|
       %li= message
-  = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+  = form_with(model: @board, url: board_path(@board), method: 'put', local: true) do |f|
     %div
       = f.label :name, 'ボードの名前'
     %div
@@ -12,4 +12,4 @@
       = f.label :description, '説明'
     %div
       = f.text_area :description
-    = f.submit 'ボードを新規作成', class: 'btn-primary'
+    = f.submit '更新', class: 'btn-primary'
