@@ -10,5 +10,5 @@
 #  updated_at :datetime         not null
 #
 class Task < ApplicationRecord
-  belongs_to :board
+  
 end
