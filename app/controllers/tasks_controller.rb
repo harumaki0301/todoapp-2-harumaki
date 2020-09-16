@@ -19,6 +19,18 @@ class TasksController < ApplicationController
     @tasks = @board.tasks.all
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    if @task.update(rasks_params)
+      redirect_to board_tasks_path
+    else
+      render :edit
+    end
+  end
+
   private
     def tasks_params
       params.require(:task).permit(:title, :content, :deadline)
