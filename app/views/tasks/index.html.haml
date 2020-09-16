@@ -5,12 +5,14 @@
     = link_to board_tasks_path(@board) do
       .card
         %h2.card-title= task.title
+        %p.card-deadline
+          期限：#{task.deadline}
         %p.card-content= task.content 
         .board_detail_actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
             .dropdown-content.mini
-              = link_to '編集する', '#'
+              = link_to '編集する', edit_board_task_path(id: @board.id)
               = link_to '削除する', '#'
   = link_to new_board_task_path(@board) do
     .add-board-card

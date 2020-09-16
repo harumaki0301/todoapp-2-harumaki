@@ -1,4 +1,4 @@
-.title New Task
+.title Edit Task
 .container
   %ul
     - @task.errors.full_messages.each do |message|
@@ -16,4 +16,4 @@
       = f.label :content, '説明'
     %div
       = f.text_area :content
-    = f.submit 'タスクを新規作成', class: 'btn-primary'
+    = f.submit 'タスクを更新', class: 'btn-primary'
