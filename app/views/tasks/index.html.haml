@@ -5,6 +5,8 @@
     = link_to board_tasks_path(@board) do
       .card
         %h2.card-title= task.title
+        %p.card-deadline
+          期限：#{task.deadline}
         %p.card-content= task.content 
         .board_detail_actions
           .dropdown

@@ -16,5 +16,5 @@
 #
 class Task < ApplicationRecord
   belongs_to :board
-  validates :title, :content, presence: true
+  validates :title, :deadline, presence: true
 end
