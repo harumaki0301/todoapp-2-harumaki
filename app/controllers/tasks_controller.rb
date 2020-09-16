@@ -21,14 +21,22 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @board = Board.find(params[:board_id])
   end
 
   def update
-    if @task.update(rasks_params)
+    @task = Task.find(params[:id])
+    if @task.update(tasks_params)
       redirect_to board_tasks_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    task = Task.find(params[:id])
+    task.destroy!
+    redirect_to board_tasks_path
   end
 
   private
