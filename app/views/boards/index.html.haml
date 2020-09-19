@@ -5,13 +5,13 @@
       .card
         %h2.card-title= board.name
         %p.card-content= board.description 
-        - if user_signed_in?
+        - if user_signed_in? && current_user.boards.exists?(id: board.id)
           .board_detail_actions
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
                 = link_to '編集する', edit_board_path(id: board.id)
-                = link_to '削除する', board_path(id: board.id), data: { method: 'delete', confirm: '本当に削除しますか' }
+                = link_to '削除する', board_path(id: board.id), method: 'delete', data: {confirm: '本当に削除しますか' }
   = link_to new_board_path do
     .add-board-card
       %h2.add-board-text + Add new board
