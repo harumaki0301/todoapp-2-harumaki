@@ -5,7 +5,7 @@
       .card
         %h2.card-title= board.name
         %p.card-content= board.description 
-        - if user_signed_in?
+        - if user_signed_in? && current_user.boards.exists?(id: board.id)
           .board_detail_actions
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
