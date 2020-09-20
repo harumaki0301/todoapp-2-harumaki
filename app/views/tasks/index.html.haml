@@ -8,7 +8,7 @@
         %p.card-deadline
           期限：#{task.deadline}
         %p.card-content= task.content 
-        - if user_signed_in? 
+        - if user_signed_in? && current_user.tasks.exists?(id: task.id)
           .board_detail_actions
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'

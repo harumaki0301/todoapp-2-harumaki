@@ -2,13 +2,14 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
-    board = Board.find(params[:board_id])
-    @task = board.tasks.build
+    @board = Board.find(params[:board_id])
+    @task = current_user.tasks.build(board_id: @board.id)
   end
 
   def create
     board = Board.find(params[:board_id])
     @task = board.tasks.build(tasks_params)
+    @task.user_id = current_user.id
     if @task.save
       redirect_to board_tasks_path
     else
