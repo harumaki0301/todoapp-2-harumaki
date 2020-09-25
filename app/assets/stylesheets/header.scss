@@ -1,9 +1,20 @@
+$avatar-size: 40px;
+$header-padding-y: 16px;
+
+
 .header {
   padding-bottom: 50px;
 
   &_Btn {
-    float: right;
     padding: 17px 20px;
+    float: right;
+  }
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+    padding: 10px 20px;
   }
 }
 
@@ -40,6 +51,7 @@
 
   
 }
+
 
 
 

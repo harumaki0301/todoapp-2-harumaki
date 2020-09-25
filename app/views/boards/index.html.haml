@@ -3,7 +3,9 @@
   - @boards.each do |board|
     = link_to board_tasks_path(board) do
       .card
-        %h2.card-title= board.name
+        .title-and-icon
+          %h2.card-title= board.name
+          = image_tag 'circleImg01.png', class: 'header_avatar dropbtn'
         %p.card-content= board.description 
         - if user_signed_in? && current_user.boards.exists?(id: board.id)
           .board_detail_actions
