@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2020_09_25_234713) do
   end
 
   create_table "boards", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
@@ -55,14 +55,12 @@ ActiveRecord::Schema.define(version: 2020_09_25_234713) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "title"
     t.text "content"
     t.date "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "board_id"
-    t.bigint "user_id"
-    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
