@@ -15,6 +15,7 @@
         .dropdown
           = image_tag 'circleImg01.png', class: 'header_avatar dropbtn'
           .dropdown-content
+            = link_to 'プロフィール', profile_path, class: 'header_Btn'
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header_Btn'
       - else
         = link_to 'ログイン', new_user_session_path, class: 'header_Btn'
