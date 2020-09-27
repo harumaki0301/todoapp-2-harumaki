@@ -37,4 +37,12 @@ class User < ApplicationRecord
   def introduction
     profile&.introduction
   end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'circleImg01.png'
+    end
+  end
 end

@@ -6,7 +6,7 @@
       .card
         .title-and-icon
           %h2.card-title= task.title
-          = image_tag 'circleImg01.png', class: 'header_avatar dropbtn'
+          = image_tag task.user.avatar_image, class: 'header_avatar dropbtn'
         %p.card-deadline
           期限：#{task.deadline}
         %p.card-content= task.content 
