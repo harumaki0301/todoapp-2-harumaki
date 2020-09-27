@@ -4,9 +4,9 @@
       = image_tag 'circleImg01.png'
     .profilePage_user_basicInfo
       .profilePage_user_name
-        いいいいい
+        = current_user.display_name
         .profilePage_user_displayName
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
       .profilePage_user_introduction
-        あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        = current_user.introduction

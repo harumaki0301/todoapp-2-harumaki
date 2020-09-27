@@ -29,4 +29,12 @@ class User < ApplicationRecord
   def prepare_profile
     profile || build_profile
   end
+
+  def display_name
+    profile&.nickname || self.email.split('@').first
+  end
+
+  def introduction
+    profile&.introduction
+  end
 end
