@@ -8,6 +8,7 @@
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  board_id   :integer          not null
 #  user_id    :bigint           not null
 #
 # Indexes
