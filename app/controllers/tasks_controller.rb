@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def new
     @board = Board.find(params[:board_id])
@@ -15,6 +15,10 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    
   end
 
   def index
