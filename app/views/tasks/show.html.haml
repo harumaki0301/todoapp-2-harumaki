@@ -1,1 +1,25 @@
-show
+.title 
+  = @task.title
+.container
+  %p.card-deadline
+    期限：#{@task.deadline}
+  %p.card-content
+    = @task.content
+  %h2 コメント一覧
+  - @comments.each do |comment|
+    .card
+      %p= comment.content
+      = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
+
+      - if user_signed_in? && current_user.comments.exists?(id: comment.id)
+        .board_detail_actions
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_task_comment_path(board_id: @board.id, task_id: @task.id, id: comment.id)
+              = link_to '削除する', board_task_comment_path(board_id: @board.id, task_id: @task.id, id: comment.id), method: 'delete', data: { confirm: '本当に削除しますか'} 
+  
+  - if user_signed_in?
+    = link_to new_board_task_comment_path(board_id: @board.id, task_id: @task.id) do
+      .btn-secondary
+        コメントする

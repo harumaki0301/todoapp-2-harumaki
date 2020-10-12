@@ -1,0 +1,11 @@
+.title Edit Comment
+.container
+  %ul
+    - @comment.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @comment, url: board_task_comment_path(board_id: @board.id, task_id: @task.id, id: @comment.id), method: 'put', local: true) do |f|
+    %div
+      = f.label :content, 'コメント内容'
+    %div
+      = f.text_field :content, class: 'content'
+    = f.submit 'コメントを更新', class: 'btn-primary'

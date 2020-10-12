@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     
     if @comment.save
-      redirect_to board_tasks_path
+      redirect_to board_task_path(board_id: @board.id, id: @task.id)
     else
       render :new
     end
@@ -27,22 +27,27 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @board = Board.find(params[:board_id])
     @task = Task.find(params[:task_id])
   end
 
   def update
+    @board = Board.find(params[:board_id])
+    @task = Task.find(params[:task_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comments_params)
-      redirect_to task_comments_path
+      redirect_to board_task_path(board_id: @board.id, id: @task.id)
     else
       render :edit
     end
   end
 
   def destroy
+    board = Board.find(params[:board_id])
+    task = Task.find(params[:task_id])
     comment = Comment.find(params[:id])
     comment.destroy!
-    redirect_to task_comments_path
+    redirect_to board_task_path(board_id: board.id, id: task.id)
   end
 
   private
