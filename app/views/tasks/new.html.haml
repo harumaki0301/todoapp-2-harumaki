@@ -1,4 +1,4 @@
-.title New Task
+.title タスクを追加
 .container
   %ul
     - @task.errors.full_messages.each do |message|
@@ -13,7 +13,7 @@
     %div
       = f.date_field :deadline, class: 'date'
     %div
-      = f.label :content, '説明'
+      = f.label :content, '担当者'
     %div
-      = f.text_area :content
+      = f.text_field :content, class: 'date'
     = f.submit 'タスクを新規作成', class: 'btn-primary'
