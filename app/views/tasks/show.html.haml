@@ -5,11 +5,15 @@
     期限：#{@task.deadline}
   %p.card-content
     担当者：#{@task.content}
+  %p.card-content
+    カテゴリ：#{@board.name}
   %h2 コメント一覧
   - @comments.each do |comment|
     .card
       %p= comment.content
-      = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
+      .title-and-icon
+        %p 作成者：#{comment.user.display_name}
+        = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
 
       - if user_signed_in? && current_user.comments.exists?(id: comment.id)
         .board_detail_actions
