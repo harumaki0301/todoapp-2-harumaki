@@ -1,4 +1,4 @@
-.title All Boards
+.title 家事のカテゴリ
 .container
   - @boards.each do |board|
     = link_to board_tasks_path(board) do
@@ -16,4 +16,4 @@
                 = link_to '削除する', board_path(id: board.id), method: 'delete', data: {confirm: '本当に削除しますか' }
   = link_to new_board_path do
     .add-board-card
-      %h2.add-board-text + Add new board
+      %h2.add-board-text + 家事のカテゴリを追加

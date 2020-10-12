@@ -1,15 +1,15 @@
-.title New Board
+.title 家事のカテゴリを追加
 .container
   %ul
     - @board.errors.full_messages.each do |message|
       %li= message
   = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
     %div
-      = f.label :name, 'ボードの名前'
+      = f.label :name, '家事のカテゴリ（例：掃除、洗濯、料理）'
     %div
       = f.text_field :name, class: 'text'
     %div
-      = f.label :description, '説明'
+      = f.label :description, '備考'
     %div
       = f.text_area :description
-    = f.submit 'ボードを新規作成', class: 'btn-primary'
+    = f.submit '家事のカテゴリを新規作成', class: 'btn-primary'
