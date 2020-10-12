@@ -19,4 +19,5 @@ class Task < ApplicationRecord
   belongs_to :board
   belongs_to :user
   validates :title, :deadline, presence: true
+  has_many :comments, dependent: :destroy
 end

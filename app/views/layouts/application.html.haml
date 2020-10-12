@@ -10,7 +10,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
     %header.header
-      .header-logo Boards
+      = link_to '家事の分類', boards_path, class: 'header-logo', method: :get
       - if user_signed_in?
         .dropdown
           = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'

@@ -6,7 +6,7 @@
         .title-and-icon
           %h2.card-title= board.name
           = image_tag board.user.avatar_image, class: 'header_avatar dropbtn'
-        %p.card-content= board.description 
+        %p.card-content= board.description
         - if user_signed_in? && current_user.boards.exists?(id: board.id)
           .board_detail_actions
             .dropdown
