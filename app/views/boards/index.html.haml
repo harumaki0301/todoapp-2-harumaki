@@ -3,10 +3,11 @@
   - @boards.each do |board|
     = link_to board_tasks_path(board) do
       .card
-        .title-and-icon
-          %h2.card-title= board.name
+        %h2.card-title= board.name
+        %p.card-content 備考：#{board.description}
+        %p.title-and-icon
+          カテゴリ作成者：#{board.user.display_name}
           = image_tag board.user.avatar_image, class: 'header_avatar dropbtn'
-        %p.card-content= board.description
         - if user_signed_in? && current_user.boards.exists?(id: board.id)
           .board_detail_actions
             .dropdown

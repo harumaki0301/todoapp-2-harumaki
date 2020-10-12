@@ -39,6 +39,22 @@
   
 }
 
+.card-deadline {
+  height: 19px;
+  top: calc(50% - 19px/2 + 15.5px);
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 19px;
+
+  color: black;
+
+  mix-blend-mode: normal;
+  
+}
+
 .add-board-card {
 height: 160px;
 background: #FFFFFF;
