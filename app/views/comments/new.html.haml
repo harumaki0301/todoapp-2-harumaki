@@ -1,9 +1,8 @@
 .container
   %ul
     - @comment.errors.full_messages.each do |message|
-      %li = %message
-
-  = form_with(model: @comment, url: board_task_comments_path(@comment.task), method: 'post', local: true) do |f|
+      %li= message
+  = form_with(model: @comment, url: board_task_comments_path(board_id: @board.id, task_id:@task.id), local: true) do |f|
     %div
       = f.label :content, 'コメントの内容'
     %div

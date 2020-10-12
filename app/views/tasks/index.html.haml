@@ -9,14 +9,19 @@
           = image_tag task.user.avatar_image, class: 'header_avatar dropbtn'
         %p.card-deadline
           期限：#{task.deadline}
-        %p.card-content= task.content 
+        %p.card-content= task.content
+        
+        - if user_signed_in?
+          = link_to new_board_task_comment_path(board_id: @board.id, task_id: task.id) do
+            .btn-secondary
+              コメントする
         - if user_signed_in? && current_user.tasks.exists?(id: task.id)
           .board_detail_actions
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
                 = link_to '編集する', edit_board_task_path(board_id: @board.id, id: task.id)
-                = link_to '削除する', board_task_path(board_id: @board.id, id: task.id), method: 'delete', data: { confirm: '本当に削除しますか'}
+                = link_to '削除する', board_task_path(board_id: @board.id, id: task.id), method: 'delete', data: { confirm: '本当に削除しますか'}                
   = link_to new_board_task_path(@board) do
     .add-board-card
       %h2.add-board-text + Add new task

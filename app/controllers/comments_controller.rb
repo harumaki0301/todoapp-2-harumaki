@@ -2,16 +2,19 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
-    task = Task.find(params[:task_id])
-    @comment = task.comments.build
+    @board = Board.find(params[:board_id])
+    @task = Task.find(params[:task_id])
+    @comment = current_user.comments.build(board_id: @board.id, task_id: @task.id)
   end
 
   def create
-    task = Task.find(params[:task_id])
-    @comment = task.comments.build(comments_params)
+    @board = Board.find(params[:board_id])
+    @task = Task.find(params[:task_id])
+    @comment = @task.comments.build(comments_params)
     @comment.user_id = current_user.id
+    
     if @comment.save
-      redirect_to task_comments_path
+      redirect_to board_tasks_path
     else
       render :new
     end
@@ -44,7 +47,7 @@ class CommentsController < ApplicationController
 
   private
     def comments_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content).merge(board_id: @board.id)
     end
 end
 
